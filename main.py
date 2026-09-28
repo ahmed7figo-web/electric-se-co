@@ -195,3 +195,8 @@ def unified_contract_app():
 @app.get("/api/health")
 def health_check():
     return {"status": "online", "system": "Maayir Construction Unified System"}
+if __name__ == "__main__":
+    import uvicorn
+    import os
+    port = int(os.environ.get("PORT", 10000))
+    uvicorn.run("main:app", host="0.0.0.0", port=port)
