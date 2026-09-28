@@ -82,9 +82,9 @@ class WarehouseStock(Base):
     region = Column(String(50), nullable=False)
     warehouse_name = Column(String(50), nullable=False)
     item_code = Column(String(50), index=True, nullable=False)
-    if __name__ == "__main__":
+    stock_type = Column(String(20), nullable=False)  # مواد جديدة
+ if __name__ == "__main__":
     import uvicorn
     import os
     port = int(os.environ.get("PORT", 10000))
     uvicorn.run("main:app", host="0.0.0.0", port=port)
-    stock_type = Column(String(20), nullable=False)  # مواد جديدة
