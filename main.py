@@ -12,6 +12,7 @@ from sqlalchemy import (
 from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 import jwt  # مكتبة التشفير (PyJWT)
+app = FastAPI()
 
 # --- إعدادات الأمان والتشفير ---
 SECRET_KEY = "maayir_construction_secure_production_key_2026"
