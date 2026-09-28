@@ -13,6 +13,22 @@ from sqlalchemy.ext.declarative import declarative_base
 from sqlalchemy.orm import sessionmaker, Session
 import jwt  # مكتبة التشفير (PyJWT)
 app = FastAPI()
+@app.get("/")
+def read_root():
+    return {"status": "success", "message": "Maayir Construction API is active and running!"}
+
+@app.get("/tables")
+def get_tables_info():
+    return {
+        "establishment": "مؤسسة مقاولات",
+        "status": "Connected",
+        "modules": [
+            "Employees",
+            "Warehouse Stock",
+            "Contracts & Operations",
+            "Financial Tracking"
+        ]
+    }
 
 # --- إعدادات الأمان والتشفير ---
 SECRET_KEY = "maayir_construction_secure_production_key_2026"
